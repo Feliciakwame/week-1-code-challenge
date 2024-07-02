@@ -1,36 +1,65 @@
- week-1-code-challenge
- The challenge contains three questions:
+# Week One Code Challenge
 
- Question 1:
- Write a function that prompts the user to input student marks. The input should be between 0 and 100. The output should correspond the correct grade, as shown below: 
- The pseudocode:
-1.Declaring the function
-2.Declaring the variable input
-3.Prompt the user to enter an input
-4.Use an if statement to countercheck the value entered
-5.Bring an alert if the condition is not fulfilled
-6.Use the else if statement because we have multiple choices
-7.Output a return value
-8.Code ends
+## Prequisities
 
-Question 2:
+1. Create a repository on your GitHub account.
 
-Write a program that takes the speed of a car as input e.g 80. If the speed is less than 70, it should print “Ok”. Otherwise, for every 5 km/s above the speed limit (70), it should give the driver one demerit point and print the total number of demerit points.
-  The Pseudocode:
-1.function declaration
-2.Declaring the variables
-3.Prompt user to enter value for car speed
-4.Use the if condition to counteract the speed limit
-5.The else condition is then executed if the if condition is not valid
-6.Code ends
+   NB: One folder, with 3-4 files for each solution. Please note that a single file should only hold one solution.
 
-Question 3:
-Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. Calculate the payee (i.e. Tax), NHIF Deductions, NSSF Deductions, gross salary, and net salary. 
-  The Pseudocode:
-1.Function declaration
-2.Prompt user to enter values for benefits and basic salary
-3.Variable declarations
-4.Calculations of tax,NHIF deductions and NSSF deductions
-5.Calculate net salary by deducting the gross salary from the rest of the deductions
-6.Code ends
+2. Use JavaScript to wire down the solution.
 
+3. Push the solution to the above repository once done.
+
+4. Submit the repository link for grading.
+
+5. Ensure your repository has a well written README.
+
+## Sytem Requirements
+
+- Node 18+
+- A browser capable of running javascript e.g safari,firefox and chrome
+- A text editor capable of running javascript e.g Visual Studio Code
+- RAM storage >8GB
+- Disc space >1GB
+
+## Installation
+
+- Open your local terminal
+- Clone the repository from git using:  
+   git clone (SSH KEY)
+- Change directory to your file by using the 'cd' command
+- Open your file using the 'code(space).' command
+
+# Challenge 1: Student Grade Generator (Toy Problem)
+
+Write a function that prompts the user to input student marks. The input should be between 0 and 100. The output should correspond the correct grade, as shown below:
+
+        A > 79, B - 60 to 79, C -  59 to 49, D - 40 to 49, E - less 40.
+
+- function marks_fn() {
+- let input;
+- while (true) {
+  // Prompt the user to enter student marks
+- input = prompt("Enter student marks:");
+  //Use the else condition to countercheck the user's input
+- if (!isNaN(input) && input >= 0 && input <= 100) {
+  break;
+  } else {
+- alert("Enter a number 0-100");
+  }
+  }
+- let grade;
+  //Use the else if condition because we have multiple conditions
+- if (input < 40) {
+  grade = "E";
+  } else if (input < 50) {
+  grade = "D";
+  } else if (input < 60) {
+  grade = "C";
+  } else if (input < 70) {
+  grade = "B";
+  } else {
+  grade = "A";
+  }
+- alert("The grade for marks" + input + "is" + grade);
+  }
