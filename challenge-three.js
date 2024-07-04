@@ -1,8 +1,11 @@
+// Create a function to calculate net salary
 function calculateNetSalary() {
   const basicSalary = parseFloat(prompt("Enter basic salary:"));
   const benefits = parseFloat(prompt("Enter the benefits:"));
   const grossSalary = basicSalary + benefits;
+  // Create a function to calculate PAYEE
   function calculatePAYE() {
+    //Use else if condition since we have multiple conditions
     if (grossSalary < 240001) {
       return (PAYE = (10 * grossSalary) / 100);
     } else if (grossSalary < 32333) {
@@ -14,6 +17,7 @@ function calculateNetSalary() {
     }
   }
   calculatePAYE();
+  //Create a function to calculate NHIF
   function calculateNHIF() {
     if (grossSalary < 6000) {
       return (NHIF = 150);
@@ -52,7 +56,9 @@ function calculateNetSalary() {
     }
   }
   calculateNHIF();
+  // Initialize the value of nssfDeductions
   const nssfDeductions = 1000;
+  // Calculate net salary using the subtraction operation
   const netSalary = grossSalary - PAYE - NHIF - nssfDeductions;
   console.log("Gross salary:" + grossSalary);
   console.log("PAYE:" + PAYE);
